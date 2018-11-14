@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/momokanni/config-repo.git
+          username: 740949744@qq.com
+          password: 409174sl
+          basedir: /usr/local/sunlin/basedir
+          searchPaths: order,product,api-getway,user
+  rabbitmq:
+      host: rabbit_service
+      port: 5672
+      username: admin
+      password: admin
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/
+  instance:
+    # prefer-ip-address: true
+    instance-id: ${cloud_IP}:${server_port}
+    # ip-address: ${cloud_IP}
+    hostname: 47.94.128.132
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

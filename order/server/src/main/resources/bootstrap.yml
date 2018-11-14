@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: order
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: dev
+      fail-fast: true
+      #server:
+        #native:
+          #search-locations: file:///D:/code/springCloud/config-basedir
+    stream:
+      bindings:
+        orderMsgInput:
+          group: order
+          content-type: application/json
+        orderMsgOut:
+          content-type: text/plain
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/
+  instance:
+    prefer-ip-address: true
+
+
+
+

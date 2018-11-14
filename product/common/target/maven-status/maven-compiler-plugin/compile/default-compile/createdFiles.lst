@@ -1,0 +1,3 @@
+com\txhl\product\common\enums\ProductStatus.class
+com\txhl\product\common\ProductOutput.class
+com\txhl\product\common\ReduceStockInput.class
